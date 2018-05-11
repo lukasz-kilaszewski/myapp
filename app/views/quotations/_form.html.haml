@@ -1,0 +1,14 @@
+= form_with(model: quotation, local: true) do |form|
+  - if quotation.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(quotation.errors.count, "error")
+        prohibited this quotation from being saved:
+      %ul
+        - quotation.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :quote
+    = form.text_field :quote
+  .actions
+    = form.submit
