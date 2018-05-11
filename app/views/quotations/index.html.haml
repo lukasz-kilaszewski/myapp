@@ -1,16 +1,14 @@
-%p#notice= notice
-%h1 Quotations
-%table
-  %thead
-    %tr
-      %th Quote
-      %th{:colspan => "3"}
-  %tbody
-    - @quotations.each do |quotation|
+.container
+  %p#notice= notice
+  %h1 Quotations
+  %table
+    %thead
       %tr
-        %td= quotation.quote
-        %td= link_to 'Show', quotation
-        %td= link_to 'Edit', edit_quotation_path(quotation)
-        %td= link_to 'Destroy', quotation, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Quotation', new_quotation_path
+        %th Quote
+        %th{:colspan => "3"}
+    %tbody
+      - @quotations.each do |quotation|
+        %tr
+          %td= quotation.quote
+  %br/
+  = link_to 'New Quotation', new_quotation_path, class: 'btn btn-primary'

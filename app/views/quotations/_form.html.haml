@@ -11,4 +11,5 @@
     = form.label :quote
     = form.text_field :quote
   .actions
-    = form.submit
+    = form.submit, 'Submit', class: 'btn btn-succes'
+    = link_to 'Back', quotations_path, class: 'btn btn-secondary'
