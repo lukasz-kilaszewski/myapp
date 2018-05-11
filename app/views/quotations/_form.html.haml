@@ -1,4 +1,4 @@
-= form_with(model: quotation, local: true) do |form|
+= form_for @quotation do |form|
   - if quotation.errors.any?
     #error_explanation
       %h2
@@ -7,9 +7,9 @@
       %ul
         - quotation.errors.full_messages.each do |message|
           %li= message
-  .field
+  .form-group
     = form.label :quote
-    = form.text_field :quote
+    = form.text_field :quote, class: 'form-fontrol'
   .actions
     = form.submit, 'Submit', class: 'btn btn-succes'
     = link_to 'Back', quotations_path, class: 'btn btn-secondary'
